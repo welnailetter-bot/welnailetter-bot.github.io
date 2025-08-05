@@ -231,7 +231,7 @@ graph TB
 
 "코드는... 어려운데...?" 걱정 마세요! HuggingFace 라이브러리를 사용하면 생각보다 간단하게 파인튜닝을 할 수 있어요.
 
-</div>python
+```python
 from transformers import (
     WhisperFeatureExtractor,
     WhisperTokenizer,
@@ -253,7 +253,7 @@ trainer = Seq2SeqTrainer(
 )
 
 trainer.train() # "공부 시작!"
-</div>
+```
 
 
 
@@ -365,7 +365,7 @@ mindmap
 
 #### 파이썬으로 Whisper 맛보기
 
-</div>python
+```python
 from openai import OpenAI
 
 client = OpenAI()
@@ -386,7 +386,7 @@ with open("korean_audio.mp3", "rb") as audio_file:
         file=audio_file
     )
     print(translation.text)
-</div>
+```
 
 #### 지원하는 오디오 형식
 

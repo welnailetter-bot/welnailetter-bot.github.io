@@ -34,7 +34,7 @@ category: blog
 tags:
   - welcome
   - blog
-author: welnai
+author: thiagorossener
 paginate: true
 ---
 
@@ -263,3 +263,197 @@ Skill 2
 It would look like:
 
 ![Paginated Page Screenshot](https://res.cloudinary.com/dm7h7e8xj/image/upload/v1566430021/paginated-page-screenshot_zx4xjn.jpg)
+
+#### `mermaid`
+
+*(Optional)*
+
+Type: *boolean*
+
+Enable Mermaid diagram support in your post. Set to `true` to render Mermaid diagrams.
+
+Example:
+
+```yaml
+# _posts/2019-08-22-example.md
+---
+...
+mermaid: true
+...
+---
+```
+
+## Using Mermaid Diagrams
+
+When `mermaid: true` is set in the front matter, you can use Mermaid diagrams in your posts by wrapping them in `<div class="mermaid">` tags.
+
+### Supported Diagram Types
+
+#### Flowcharts
+
+```html
+<div class="mermaid">
+graph TB
+    A[Start] --> B{Decision}
+    B -->|Yes| C[Action 1]
+    B -->|No| D[Action 2]
+    C --> E[End]
+    D --> E
+</div>
+```
+
+#### Pie Charts
+
+```html
+<div class="mermaid">
+pie title Sample Data Distribution
+    "Category A" : 45
+    "Category B" : 30
+    "Category C" : 15
+    "Category D" : 10
+</div>
+```
+
+#### Mind Maps
+
+```html
+<div class="mermaid">
+mindmap
+  root((Main Topic))
+    Branch 1
+      Sub-topic 1
+      Sub-topic 2
+    Branch 2
+      Sub-topic 3
+      Sub-topic 4
+</div>
+```
+
+#### Timelines
+
+```html
+<div class="mermaid">
+timeline
+    title Project Timeline
+    
+    2023 : Planning Phase
+         : Research
+         : Requirements
+    
+    2024 : Development Phase  
+         : Implementation
+         : Testing
+</div>
+```
+
+#### Architecture Diagrams
+
+```html
+<div class="mermaid">
+graph TB
+    subgraph System["System Architecture"]
+        A[Frontend] --> B[API Gateway]
+        B --> C[Backend Services]
+        C --> D[Database]
+        
+        style A fill:#e1f5fe
+        style D fill:#c8e6c9
+    end
+</div>
+```
+
+**Note:** Make sure to include `mermaid: true` in your post's front matter to enable diagram rendering.
+
+## Using Code Blocks
+
+Code blocks are essential for displaying code snippets in your posts. Use proper syntax highlighting by specifying the language.
+
+### Basic Code Blocks
+
+Use triple backticks with language specification:
+
+````markdown
+```python
+def hello_world():
+    print("Hello, World!")
+```
+````
+
+### Supported Languages
+
+Common languages supported for syntax highlighting:
+
+- **Python**: `python`
+- **JavaScript**: `javascript` or `js`
+- **HTML**: `html`
+- **CSS**: `css`
+- **Java**: `java`
+- **C++**: `cpp`
+- **Shell/Bash**: `bash` or `shell`
+- **JSON**: `json`
+- **YAML**: `yaml`
+- **Markdown**: `markdown`
+
+### Examples
+
+#### Python Code
+
+````markdown
+```python
+from transformers import WhisperProcessor, WhisperForConditionalGeneration
+
+# Load model and processor
+processor = WhisperProcessor.from_pretrained("openai/whisper-small")
+model = WhisperForConditionalGeneration.from_pretrained("openai/whisper-small")
+
+# Process audio
+input_features = processor(audio, sampling_rate=16000, return_tensors="pt").input_features
+predicted_ids = model.generate(input_features)
+transcription = processor.batch_decode(predicted_ids, skip_special_tokens=True)
+```
+````
+
+#### JavaScript Code
+
+````markdown
+```javascript
+const fetchData = async () => {
+  try {
+    const response = await fetch('/api/whisper');
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error:', error);
+  }
+};
+```
+````
+
+#### Shell Commands
+
+````markdown
+```bash
+# Install dependencies
+npm install
+
+# Run the application
+npm start
+
+# Build for production
+npm run build
+```
+````
+
+### Inline Code
+
+For inline code references, use single backticks:
+
+```markdown
+Use the `whisper.load_model()` function to load the model.
+```
+
+**Best Practices:**
+- Always specify the language for proper syntax highlighting
+- Keep code blocks concise and focused
+- Add comments to explain complex logic
+- Use consistent indentation and formatting
