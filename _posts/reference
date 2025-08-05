@@ -1,0 +1,53 @@
+GRPO 개요 (Overview of GRPO)
+링크 : https://huggingface.co/learn/cookbook/en/fine_tuning_llm_grpo_trl
+
+    GRPO(Group Relative Policy Optimization)는 심층 강화 학습(Deep Reinforcement Learning)의 한 종류로, 특히 LLM의 추론 능력을 향상시키는 데 효과적인 것으로 알려져 있습니다. PPO(Proximal Policy Optimization)와 유사하지만, GRPO는 더 효율적인 메모리 사용을 위해 "크리틱(critic)" 또는 "가치 모델(value model)"을 제거하고, 대신 여러 샘플의 상대적인 품질을 사용하여 이점을 계산합니다. 이는 추론 능력을 향상시키는 동시에 계산 효율성을 높이는 데 기여합니다.
+ 
+    
+        VLM에 GRPO 적용 (Applying GRPO to VLMs)
+    
+    GRPO는 언어 모델뿐만 아니라 비전-언어 모델(VLM)의 추론 능력 향상에도 성공적으로 적용되었습니다. 특히, RefCOCO와 같은 시각적 정합(visual grounding) 작업에서 GRPO를 사용하여 학습된 VLM이 SFT(Supervised Fine-Tuning)만 사용한 모델보다 더 나은 일반화 성능을 보였습니다. 이는 GRPO가 VLM이 시각적 추론을 수행하는 능력을 강화할 수 있음을 시사합니다.
+ 
+    
+        VLM 추론을 위한 GRPO 학습 과정 (GRPO Training Process for VLM Reasoning)
+링크 : https://github.com/welnailetter-bot/VLM-R1    
+    
+데이터셋 준비: GRPO 학습을 위해서는 이미지와 관련된 문제 설명, 그리고 그 문제에 대한 단계별 해결 과정(추론)이 포함된 데이터셋이 필요합니다. lmms-lab/multimodal-open-r1-8k-verified와 같은 데이터셋이 이러한 목적으로 활용될 수 있습니다.
+
+모델 로딩: Qwen/Qwen2.5-VL-3B-Instruct와 같은 사전 학습된 VLM을 기반 모델로 사용합니다.
+
+LoRA 구성: PEFT(Parameter-Efficient Fine-Tuning) 라이브러리를 사용하여 LoRA(Low-Rank Adaptation)를 구성하여 효율적인 학습을 수행합니다.
+
+보상 함수 정의: GRPO 학습의 핵심은 적절한 보상 함수를 설계하는 것입니다. 일반적으로 다음 두 가지 보상 함수가 사용됩니다.
+
+형식 보상 (Format Reward): 모델이 <think>와 <answer> 태그를 사용하여 추론 과정과 최종 답변을 명확하게 구분하도록 강제합니다.
+정확도 보상 (Accuracy Reward): 모델의 답변이 실제 정답과 일치하는지를 평가합니다. 수학적 문제의 경우, math_verify 라이브러리를 사용하여 정답의 정확성을 검증할 수 있습니다.
+
+
+GRPO 학습: trl 라이브러리의 GRPOTrainer를 사용하여 정의된 보상 함수와 함께 모델을 학습시킵니다. 학습 과정에서 num_generations (생성 횟수) 및 max_completion_length (최대 완료 길이)와 같은 하이퍼파라미터를 조정하여 성능을 최적화할 수 있습니다.
+
+
+링크 : https://huggingface.co/learn/cookbook/en/fine_tuning_vlm_grpo_trl
+ 
+    
+        GRPO 학습의 이점 (Benefits of GRPO Training)
+    
+링크 : https://www.msn.com/en-us/news/technology/reliable-reasoning-ai-agents-may-be-just-around-the-corner-thanks-to-deepseek-s-innovations-say-researchers/ar-AA1yxrpZ
+
+
+향상된 추론 능력: GRPO는 VLM이 복잡한 시각적 질문에 대해 단계별 추론을 수행하도록 유도하여 전반적인 추론 능력을 향상시킵니다.
+개선된 일반화 성능: GRPO는 SFT에 비해 새로운 시나리오나 변형된 프롬프트에 대해 더 나은 일반화 성능을 제공하는 것으로 나타났습니다. 이는 모델이 언어적 패턴에 과적합되는 것을 방지하고 실제 공간적 의미를 더 잘 이해하도록 돕기 때문입니다.
+효율성: GRPO는 크리틱 모델을 제거함으로써 PPO보다 메모리 사용량을 줄여 더 효율적인 학습이 가능합니다.
+도구 사용 학습: GRPO는 VLM이 줌(zoom)과 같은 외부 도구를 사용하여 이미지의 세부 사항을 탐색하고 추론 과정에 통합하도록 학습시키는 데에도 활용될 수 있습니다. 이는 특히 제한된 컴퓨팅 자원 하에서 VLM의 상세한 시각적 추론 능력을 향상시키는 데 유용합니다.
+
+ 
+    
+        관련 연구 및 동향 (Related Research and Trends)
+    링크 : https://www.alphaxiv.org/overview/2504.07615v2
+    
+    
+VLM-R1: VLM-R1 프로젝트는 GRPO를 시각적 추론에 적용하여 RefCOCO와 같은 작업에서 SFT보다 뛰어난 일반화 성능을 보여주었습니다.
+공간 추론 (Spatial Reasoning): GRPO는 공간 추론 능력을 향상시키는 데에도 효과적인 것으로 나타났으며, Scene Graph CoT와 같은 구조화된 프롬프트와 결합될 때 시너지 효과를 발휘합니다.
+도구 사용 (Tool Use): GRPO는 VLM이 줌과 같은 도구를 사용하여 상세한 시각적 정보를 얻고 추론 과정을 개선하도록 하는 데에도 사용되고 있습니다.
+의료 및 3D VLM: GRPO는 의료 이미지 추론(MedVLM-R1) 및 3D 장면 이해(3D-R1)와 같은 특정 도메인에서도 VLM의 추론 능력을 강화하기 위해 활용되고 있습니다.
+
