@@ -1,7 +1,8 @@
 # Site Settings
-name: Wellflix
-title: Wellflix | A blog for Wellness, Robotics, and AI
-description: Exciting news and insights in the fields of wellness, robotics, and AI.
+name: Jekflix
+title: Jekflix | A blog theme for Jekyll
+description: Jekflix is a template for Jekyll inspired by Netflix and made by
+  Thiago Rossener.
 tags:
   - blog
   - template
@@ -11,17 +12,14 @@ tags:
 show_hero: true
 menu:
   - title: Home
-    url: / 
+    url: /
   - title: About
     url: /about
-  # - title: Category
-  #   url: /category  
   - title: Contact
     url: /contact
-  # - title: Feed
-  #   url: /feed.xml
-
-email: welnaileter@gamil.com
+  - title: Feed
+    url: /feed.xml
+email: youremail@test.com
 # See: https://disqus.com/
 disqus_username: disqus_username
 # Contact Form Setting
@@ -31,12 +29,12 @@ formspree_form_id: formspree_form_id
 
 # Social Media Settings
 # Remove the item if you don't need it
-github_username: welnailetter-bot
-facebook_username: groups/1548238422799351
-# twitter_username: twitter_username
-# instagram_username: instagram_username
-# linkedin_username: linkedin_username
-# medium_username: medium_username
+github_username: github_username
+facebook_username: facebook_username
+twitter_username: twitter_username
+instagram_username: instagram_username
+linkedin_username: linkedin_username
+medium_username: medium_username
 
 
 # Posts Settings
@@ -47,9 +45,9 @@ two_columns_layout: true
 
 
 # Advanced Settings
-baseurl: "https://welnailetter-bot.github.io/home" # the subpath of your site, e.g. /blog
-url: "https://welnailetter-bot.github.io/" # the base hostname & protocol for your site
-google_analytics: "G-DY6MT5T99D"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
+google_analytics: "UA-XXXXXXXX-X"
 language: "en"
 categories_folder: category
 sent_message_url: "/contact/message-sent/"
@@ -112,4 +110,4 @@ exclude: [
 ]
 
 # Theme
-version: vA1
+version: v3.1.2
