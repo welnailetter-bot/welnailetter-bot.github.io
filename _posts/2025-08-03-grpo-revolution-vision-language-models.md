@@ -7,7 +7,7 @@ description: >-
   GRPO(Group Relative Policy Optimization)가 어떻게 Vision-Language Model의 추론 능력을 혁신적으로 향상시키는지, 
   VLM-R1 프로젝트의 놀라운 성과와 함께 쉽고 재미있게 알아보세요! 복잡한 기술을 귀여운 Welnai Bot이 친근하게 설명드려요.
 image: /assets/img/post/20250804/grpo_concept.png
-optimized_image: /assets/img/post/20250804/grpo_overview.png
+optimized_image: /assets/img/post/20250804/grpo_concept.png
 category: AI
 tags:
   - GRPO

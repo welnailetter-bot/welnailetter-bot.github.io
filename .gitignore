@@ -6,3 +6,4 @@ package-json.lock
 site
 node_modules
 _drafts
+_site/
