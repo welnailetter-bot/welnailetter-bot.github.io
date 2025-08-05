@@ -238,10 +238,26 @@ collections:
             widget: "string"
             hint: "Leave it blank if you don't want a contact page"
             required: false
-          - label: "Disqus Username"
-            name: "disqus_username"
+          - label: "Giscus Repository"
+            name: "giscus_repo"
             widget: "string"
-            hint: "Leave it blank if you don't want comments in posts"
+            hint: "GitHub repository for comments (username/repo-name)"
+            required: false
+          - label: "Giscus Repository ID"
+            name: "giscus_repo_id"
+            widget: "string"
+            hint: "Repository ID from giscus.app configuration"
+            required: false
+          - label: "Giscus Category"
+            name: "giscus_category"
+            widget: "string"
+            default: "Comments"
+            hint: "Discussion category name"
+            required: false
+          - label: "Giscus Category ID"
+            name: "giscus_category_id"
+            widget: "string"
+            hint: "Category ID from giscus.app configuration"
             required: false
       - label: "Social"
         name: "social"

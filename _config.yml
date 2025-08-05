@@ -20,7 +20,22 @@ menu:
   #   url: /feed.xml
 email: welnaileter@gamil.com
 # See: https://disqus.com/
-disqus_username: disqus_username
+# disqus_username: disqus_username  # Commented out for Giscus migration
+
+# Giscus Configuration
+# Get these values from https://giscus.app after setting up your repository
+giscus:
+  repo: "welnailetter-bot/welnailetter-bot.github.io"  # Replace with your repository
+  repo_id: "R_kgDOPYcmtw"  # Get from giscus.app
+  category: "General"  # Create this category in GitHub Discussions
+  category_id: "DIC_kwDOPYcmt84Ctyd2"  # Get from giscus.app
+  mapping: "pathname"
+  strict: "0"
+  reactions_enabled: "1"
+  input_position: "bottom"
+  theme: "preferred_color_scheme"
+  lang: "en"
+  crossorigin: "anonymous"
 # Contact Form Setting
 # See: https://formspree.io/
 formspree_form_id: formspree_form_id

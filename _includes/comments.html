@@ -1,28 +1,53 @@
-{% if site.disqus_username %}
-
+{% if site.giscus.repo %}
 <section class="comments">
     <h3>{{ site.translations.text.comments | default: "Comments" }}</h3>
-    <div id="disqus_thread"></div>
+    
+    <div id="giscus-container">
+        <div id="giscus-loader" style="text-align: center; padding: 20px;">
+            <button onclick="loadGiscus()" style="padding: 10px 20px; background: #0366d6; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                Load Comments
+            </button>
+        </div>
+    </div>
 </section>
-<script type="text/javascript">
-    var disqus_loaded = false;
 
-    function load_disqus()
-    {
-        disqus_loaded = true;
-        var disqus_shortname = '{{site.disqus_username}}';
-        var disqus_title = '{{page.title.replace("'", "\\'")}}';
-        var disqus_url = '{{page.url}}';
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        var ldr = document.getElementById('disqus_loader');
-    };
+<script>
+    var giscusLoaded = false;
+    
+    function loadGiscus() {
+        if (giscusLoaded) return;
+        
+        giscusLoaded = true;
+        
+        // Create Giscus script
+        var script = document.createElement('script');
+        script.src = 'https://giscus.app/client.js';
+        script.setAttribute('data-repo', '{{ site.giscus.repo }}');
+        script.setAttribute('data-repo-id', '{{ site.giscus.repo_id }}');
+        script.setAttribute('data-category', '{{ site.giscus.category }}');
+        script.setAttribute('data-category-id', '{{ site.giscus.category_id }}');
+        script.setAttribute('data-mapping', '{{ site.giscus.mapping | default: "pathname" }}');
+        script.setAttribute('data-strict', '{{ site.giscus.strict | default: "0" }}');
+        script.setAttribute('data-reactions-enabled', '{{ site.giscus.reactions_enabled | default: "1" }}');
+        script.setAttribute('data-emit-metadata', '0');
+        script.setAttribute('data-input-position', '{{ site.giscus.input_position | default: "bottom" }}');
+        script.setAttribute('data-theme', '{{ site.giscus.theme | default: "preferred_color_scheme" }}');
+        script.setAttribute('data-lang', '{{ site.giscus.lang | default: "en" }}');
+        script.setAttribute('crossorigin', 'anonymous');
+        script.async = true;
+        
+        // Replace the loader with the script
+        var container = document.getElementById('giscus-container');
+        container.innerHTML = '';
+        container.appendChild(script);
+    }
+    
+    // Auto-load on scroll (similar to original Disqus behavior)
     window.onscroll = function(e) {
         if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 800)) {
-            //hit bottom of page
-            if (disqus_loaded==false)
-                load_disqus()
+            if (!giscusLoaded) {
+                loadGiscus();
+            }
         }
     };
 </script>
