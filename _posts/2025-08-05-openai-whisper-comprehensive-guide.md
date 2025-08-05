@@ -1,5 +1,5 @@
 ---
-date: 2025-08-05 12:00:00
+date: 2025-08-04 12:00:00
 layout: post
 title: "AI가 내 말을 찰떡같이 알아듣는다고? OpenAI Whisper 완벽 정복기!"
 subtitle: "음성인식 끝판왕 Whisper, A부터 Z까지! 구조, 성능, 꿀팁까지 탈탈 털어드려요 ✨"
@@ -19,6 +19,7 @@ tags:
   - AI Model
 author: welnai
 paginate: true
+mermaid: true
 ---
 
 "아니, AI가 내 말을 이렇게 잘 알아듣는다고?😲"
@@ -40,7 +41,7 @@ Whisper의 핵심 구조는 바로 **Encoder-Decoder Transformer**라는 멋진 
 
 ![Whisper의 구조를 설명하는 이미지](https://placehold.co/600x300/4DB6AC/FFFFFF?text=Encoder+%2B+Decoder+Teamwork!)
 
-```mermaid
+<div class="mermaid">
 graph TB
     subgraph Architecture["Whisper Architecture"]
         A[Raw Audio Input] --> B[Mel Spectrogram]
@@ -70,11 +71,11 @@ graph TB
     style G fill:#c8e6c9
     style C fill:#fff3e0
     style F fill:#fff3e0
-```
+</div>
 
 여기에 **특수 토큰**이라는 조미료까지 팍팍! "이건 한국어야!", "이건 번역해줘!", "이 부분은 3분 15초에 한 말이야!" 같은 추가 정보를 콕콕 집어주니, 정확도가 안 높을 수가 없겠죠?
 
---page-break--
+ 
 
 ### 🚀 Whisper, 뭐가 그렇게 대단한데? (스펙 자랑 타임)
 
@@ -82,7 +83,7 @@ graph TB
 
 영어는 기본, 한국어, 일본어, 스페인어는 물론이고 우리가 이름도 생소한 언어까지 총 99개 언어를 지원해요. 전 세계 누구와도 소통할 수 있는 만능 번역기를 가진 기분이랄까요?
 
-```mermaid
+<div class="mermaid">
 pie title Whisper 훈련 데이터 분포 (시간 기준)
     "영어" : 438000
     "중국어" : 42000
@@ -92,7 +93,7 @@ pie title Whisper 훈련 데이터 분포 (시간 기준)
     "일본어" : 18000
     "한국어" : 8000
     "기타 언어" : 98000
-```
+</div>
 
 #### 🧠 혼자서도 잘해요! 멀티태스킹 능력자
 
@@ -114,7 +115,7 @@ Whisper는 tiny, base, small, medium, large 등 다양한 사이즈의 모델이
 
 ![모델 사이즈를 고르는 이미지](https://placehold.co/600x300/FF7043/FFFFFF?text=Choose+Your+Fighter!)
 
-```mermaid
+<div class="mermaid">
 graph LR
     subgraph Models["Whisper Model Variants"]
         A[Tiny<br/>39M params] --> B{Accuracy vs Speed}
@@ -136,7 +137,7 @@ graph LR
     style F fill:#bbdefb
     style G fill:#b2dfdb
     style H fill:#c8e6c9
-```
+</div>
 
 --page-break--
 
@@ -146,7 +147,7 @@ graph LR
 
 #### 한국어 처리, 이렇게 진행돼요!
 
-```mermaid
+<div class="mermaid">
 flowchart TD
     A[한국어 음성 입력] --> B[멜 스펙트로그램 변환]
     B --> C[오디오 인코더 처리]
@@ -168,7 +169,7 @@ flowchart TD
     style A fill:#e3f2fd
     style G fill:#e8f5e8
     style E fill:#fff3e0
-```
+</div>
 
 #### 살짝 아쉬운 점은? (feat. 귀여운 실수)
 
@@ -186,7 +187,7 @@ Whisper는 이미 똑똑한 만능 인재지만, 특정 분야의 '전문가'로
 
 #### 파인튜닝, 대충 이런 느낌!
 
-```mermaid
+<div class="mermaid">
 graph TB
     subgraph BaseModel["기본 Whisper 모델"]
         A[Base Model<br/>68만 시간 학습 완료]
@@ -224,13 +225,13 @@ graph TB
     style A fill:#e3f2fd
     style J fill:#e8f5e8
     style H fill:#fff3e0
-```
+</div>
 
 #### 코드로 살짝 엿보기 (HuggingFace)
 
 "코드는... 어려운데...?" 걱정 마세요! HuggingFace 라이브러리를 사용하면 생각보다 간단하게 파인튜닝을 할 수 있어요.
 
-```python
+</div>python
 from transformers import (
     WhisperFeatureExtractor,
     WhisperTokenizer,
@@ -252,7 +253,7 @@ trainer = Seq2SeqTrainer(
 )
 
 trainer.train() # "공부 시작!"
-```
+</div>
 
 --page-break--
 
@@ -268,7 +269,7 @@ trainer.train() # "공부 시작!"
 
 #### 양자화 효과, 이 정도라고?
 
-```mermaid
+<div class="mermaid">
 graph TD
     subgraph Comparison["양자화 전후 비교"]
         A[원본 모델 FP32] --> B{양자화 처리}
@@ -294,7 +295,7 @@ graph TD
     style C fill:#c8e6c9
     style D fill:#a5d6a7
     style E fill:#dcedc1
-```
+</div>
 
 #### 양자화, 뭘로 하지? (인기 라이브러리)
 
@@ -304,7 +305,7 @@ graph TD
 
 #### 방법별 성능 비교 (골라봐!)
 
-```mermaid
+<div class="mermaid">
 graph LR
     subgraph Methods["양자화 방법별 성능 비교"]
         A[FP32 원본] 
@@ -328,7 +329,7 @@ graph LR
     style C fill:#c5cae9
     style D fill:#a5d6a7
     style E fill:#fff3e0
-```
+</div>
 
 --page-break--
 
@@ -336,7 +337,7 @@ graph LR
 
 Whisper는 상상하는 모든 것을 현실로 만들어 줄 수 있어요!
 
-```mermaid
+<div class="mermaid">
 mindmap
   root((Whisper 활용법))
     콘텐츠 제작
@@ -356,7 +357,7 @@ mindmap
     개발자 도구
       음성 제어 앱
       AI 챗봇 음성 인식
-```
+</div>
 
 ### 💻 나도 써보자! Whisper API 사용법
 
@@ -364,7 +365,7 @@ mindmap
 
 #### 파이썬으로 Whisper 맛보기
 
-```python
+</div>python
 from openai import OpenAI
 
 client = OpenAI()
@@ -385,7 +386,7 @@ with open("korean_audio.mp3", "rb") as audio_file:
         file=audio_file
     )
     print(translation.text)
-```
+</div>
 
 #### 지원하는 오디오 형식
 
@@ -398,7 +399,7 @@ with open("korean_audio.mp3", "rb") as audio_file:
 
 #### 좋은 점 (이건 진짜 최고! ✨)
 
-```mermaid
+<div class="mermaid">
 graph LR
     subgraph Advantages["Whisper 장점"]
         A[높은 정확도] --> E[뛰어난 성능]
@@ -415,11 +416,11 @@ graph LR
     style E fill:#c8e6c9
     style F fill:#b2dfdb
     style I fill:#a5d6a7
-```
+</div>
 
 #### 아쉬운 점 (앞으로 더 좋아지겠죠? 🤔)
 
-```mermaid
+<div class="mermaid">
 graph TD
     subgraph Limitations["주요 제한사항"]
         A[환각 현상<br/>Hallucination]
@@ -448,7 +449,7 @@ graph TD
     style F fill:#c8e6c9
     style G fill:#c8e6c9
     style H fill:#c8e6c9
-```
+</div>
 
 **환각(Hallucination) 현상**이 뭐냐고요? 조용한 부분에서 Whisper가 너무 열심히 일한 나머지, 있지도 않은 소리를 상상해서 지어내는 현상이에요. "음... 여긴 무슨 말이지? 아! 대충 이런 내용일 거야!" 하고 추측하는 거죠. 귀엽지만 가끔은 곤란하겠죠?
 
@@ -458,7 +459,7 @@ Whisper는 여기서 멈추지 않아요! 최근에 나온 **v3** 버전은 처�
 
 #### Whisper의 미래는?
 
-```mermaid
+<div class="mermaid">
 timeline
     title Whisper 발전 로드맵
     
@@ -478,7 +479,7 @@ timeline
          : 더 많은 언어 지원
          : 실시간 동시통역 강화
          : 모바일 최적화
-```
+</div>
 
 ## 🎉 결론: Whisper, 이제 선택이 아닌 필수!
 

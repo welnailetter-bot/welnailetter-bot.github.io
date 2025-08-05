@@ -30,3 +30,7 @@ gem "liquid", "~> 4.0"
 # Netlify build compatibility
 gem "ffi", "~> 1.15"
 gem "eventmachine", "~> 1.2"
+
+group :jekyll_plugins do
+gem 'jekyll-mermaid-diagrams'
+end
