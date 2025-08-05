@@ -177,20 +177,14 @@
             
         </url>
     
-    
         <url>
-            <loc>http://localhost:4000/welcome-to-the-desert-of-the-real/view-all/</loc>
-            <changefreq>weekly</changefreq>
-            <priority>0.8</priority>
-            <lastmod>2019-05-17</lastmod>
+            <loc>http://localhost:4000/assets/css/preview.css.map</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
         </url>
     
-        <url>
-            <loc>http://localhost:4000/welcome-to-the-desert-of-the-real/2/</loc>
-            <changefreq>weekly</changefreq>
-            <priority>0.8</priority>
-            <lastmod>2019-05-17</lastmod>
-        </url>
     
         <url>
             <loc>http://localhost:4000/welcome-to-the-desert-of-the-real/</loc>
