@@ -139,7 +139,7 @@ graph LR
     style H fill:#c8e6c9
 </div>
 
---page-break--
+
 
 ### 🇰🇷 한국어 성능, 솔직히 어떤데?
 
@@ -175,7 +175,7 @@ flowchart TD
 
 물론 아직 완벽하진 않아요. 가끔 **띄어쓰기**를 깜빡하거나, **문장 부호**를 빼먹는 귀여운 실수를 하기도 해요. "아버지가방에들어가신다" 같은 느낌이랄까요? 😂 그래서 완벽한 글을 원한다면 살짝 손봐주는 후처리 과정이 필요하답니다.
 
---page-break--
+
 
 ### 🎓 내 입맛대로 튜닝하기! 파인튜닝(Fine-tuning)
 
@@ -255,7 +255,7 @@ trainer = Seq2SeqTrainer(
 trainer.train() # "공부 시작!"
 </div>
 
---page-break--
+
 
 ### 🏋️‍♀️ 모델 다이어트 시키기! 양자화(Quantization)
 
@@ -331,7 +331,7 @@ graph LR
     style E fill:#fff3e0
 </div>
 
---page-break--
+
 
 ### 🤩 그래서 이걸로 뭘 할 수 있는데? (활용 사례 무한대)
 
@@ -393,7 +393,7 @@ with open("korean_audio.mp3", "rb") as audio_file:
 -   **파일 형식**: mp3, mp4, mpeg, mpga, m4a, wav, webm (웬만한 건 다 돼요!)
 -   **파일 크기**: 최대 25MB (너무 긴 파일은 잘라서 넣어주세요!)
 
---page-break--
+
 
 ### 👍👎 장점과 단점, 솔직하게 알아보기
 
