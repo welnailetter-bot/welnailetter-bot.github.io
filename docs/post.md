@@ -34,7 +34,7 @@ category: blog
 tags:
   - welcome
   - blog
-author: thiagorossener
+author: welnai
 paginate: true
 ---
 
