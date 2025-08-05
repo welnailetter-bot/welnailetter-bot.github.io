@@ -1,7 +1,12 @@
 source "https://rubygems.org"
 
+ruby "3.0.6"
+
+# Bundler
+gem "bundler", "~> 2.2"
+
 # Jekyll core
-gem "jekyll", "~> 4.3"
+gem "jekyll", "4.3.3"
 gem "webrick", "~> 1.7" # required by Jekyll on Ruby 3.x
 
 # Markdown and syntax highlighting
@@ -22,7 +27,6 @@ gem "json", "~> 2.6"
 gem "rexml", "~> 3.2" # Required for XML parsing
 gem "liquid", "~> 4.0"
 
-# Development dependencies
-group :development do
-  gem "bundler", "~> 2.2"
-end
+# Netlify build compatibility
+gem "ffi", "~> 1.15"
+gem "eventmachine", "~> 1.2"

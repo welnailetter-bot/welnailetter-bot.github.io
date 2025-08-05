@@ -1,0 +1,73 @@
+일반적인 원인
+    
+    
+종속성 문제:
+Gemfile 또는 Gemfile.lock 파일의 종속성 충돌 또는 누락
+Bundler 버전 충돌 (Bundler 1.x와 2.x 간의 호환성 문제)
+NPM 또는 Yarn 패키지 충돌 또는 누락
+
+
+Ruby 버전 문제:
+Netlify 빌드 환경의 Ruby 버전과 프로젝트에서 요구하는 Ruby 버전 간의 불일치
+Gemfile에 지정된 Ruby 버전과 Netlify가 사용하는 Ruby 버전 간의 충돌
+
+
+빌드 명령어 문제:
+jekyll build 또는 bundle exec jekyll build와 같은 빌드 명령어의 오류
+환경 변수 설정 문제 (예: CI=true로 인해 경고가 오류로 처리되는 경우)
+
+
+파일 시스템 또는 경로 문제:
+빌드 과정에서 필요한 파일이나 디렉토리를 찾을 수 없는 경우 ("no such file or directory")
+빌드 스크립트 내에서 잘못된 경로를 참조하는 경우
+
+
+기타 문제:
+Gemfile에 누락된 젬 또는 호환되지 않는 젬
+Netlify 빌드 환경에서 지원하지 않는 소프트웨어 또는 플러그인 사용
+_config.yml 파일 설정 오류
+파일 시스템의 대소문자 구분 문제 (Windows/macOS와 Netlify 빌드 환경 간의 차이)
+대용량 파일 또는 사이트로 인한 빌드 시간 초과
+RubyGems SSL 오류
+
+
+
+ 
+    
+        일반적인 해결 방법
+    
+    
+Gemfile 및 종속성 관리:
+Gemfile에 source "https://rubygems.org" 및 gem 'jekyll', '~> X.Y.Z' 와 같이 Jekyll 및 필요한 젬을 명시적으로 지정합니다.
+Gemfile.lock 파일을 최신 상태로 유지하고, Netlify 빌드 시 이를 사용하여 종속성을 설치하도록 합니다.
+Bundler 버전을 2 이상으로 업데이트하고, 필요한 경우 bundle update --system 및 bundle update를 실행합니다.
+Netlify의 [Build settings]에서 NPM_FLAGS 환경 변수를 --force 또는 --legacy-peer-deps로 설정하여 NPM 종속성 문제를 해결합니다.
+
+
+Ruby 버전 설정:
+프로젝트 루트에 .ruby-version 파일을 생성하고 사용할 Ruby 버전을 명시합니다 (예: 2.7.1).
+Netlify의 netlify.toml 파일 또는 빌드 설정에서 RUBY_VERSION 환경 변수를 명시적으로 설정합니다.
+
+
+빌드 명령어 및 설정:
+Netlify 빌드 설정에서 "Build command"를 jekyll build 또는 bundle exec jekyll build로 정확하게 설정합니다.
+"Publish directory"를 _site로 올바르게 설정합니다.
+빌드 로그를 주의 깊게 검토하여 오류의 근본 원인을 파악합니다. 필요하다면 빌드 명령어에 --trace를 추가하여 더 자세한 정보를 얻습니다.
+
+
+캐시 정리:
+Netlify 빌드 설정에서 "Clear build cache" 옵션을 사용하여 캐시를 정리하고 다시 시도합니다.
+
+
+로컬 환경 테스트:
+Netlify에 배포하기 전에 로컬 환경에서 빌드가 성공하는지 확인합니다.
+
+
+Bundler 및 Gemfile.lock 호환성:
+Bundler 1.x로 생성된 Gemfile.lock은 Bundler 2.x 환경에서 문제를 일으킬 수 있습니다. Gemfile.lock 파일을 삭제하고 bundle install을 다시 실행하여 새 Gemfile.lock을 생성해봅니다.
+
+
+특정 오류 해결:
+jekyll: command not found 오류: Gemfile에 gem 'jekyll'이 포함되어 있는지, 그리고 bundle install이 성공적으로 완료되었는지 확인합니다.
+No such file or directory @ rb_sysopen - /opt/build/repo/bin/gulp 오류: 이는 빌드 과정에서 gulp 명령어를 찾을 수 없어 발생하는 문제입니다. 프로젝트에서 gulp를 사용하지 않는다면 이 오류는 무시해도 되거나, 해당 gem을 제거해야 할 수 있습니다.
+"Bundler found conflicting requirements for the Ruby version": Gemfile에 명시된 Ruby 버전과 html-proofer와 같은 젬이 요구하는 Ruby 버전 간의 충돌일 수 있습니다. Gemfile에서 Ruby 버전을 명시하거나, 젬 버전을 조정하여 해결할 수 있습니다.
