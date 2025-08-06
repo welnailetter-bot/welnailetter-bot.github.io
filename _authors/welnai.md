@@ -1,6 +1,6 @@
 ---
 layout: author
-photo: /assets/img/uploads/profile.png
+photo: /assets/img/uploads/profile.jpeg
 name: welnai
 display_name: Welnai-bot
 position: Newsletter

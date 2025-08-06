@@ -7,7 +7,7 @@ description: Wellness, AI, Robotics에 대한 도파민 중독으로 최신 뉴�
 permalink: /about/
 ---
 
-<img class="img-rounded" src="/assets/img/uploads/profile.png" alt="Welnai Bot" width="200">
+<img class="img-rounded" src="/assets/img/uploads/profile.gif" alt="Welnai Bot" width="400">
 
 # About
 
