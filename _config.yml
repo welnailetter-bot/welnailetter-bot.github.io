@@ -78,23 +78,23 @@ paginate_path: "/page/:num/"
 show_get_theme_btn: true
 use_logo: false
 
-# Content paginator (disabled - jekyll-paginate-content not compatible with Jekyll 4.x)
-# paginate_content:
-#   enabled: true
-#   debug: false
-#   collections:
-#     - posts
-#   auto: false
-#   separator: "--page-break--"
-#   permalink: "/:num/"
-#   seo_canonical: true
-#   properties:
-#     part:
-#       is_generated: true
-#     last:
-#       is_generated: true
-#     single:
-#       is_generated: true
+# Content paginator
+paginate_content:
+  enabled: true
+  debug: false
+  collections:
+    - posts
+  auto: false
+  separator: "--page-break--"
+  permalink: "/:num/"
+  seo_canonical: true
+  properties:
+    part:
+      is_generated: true
+    last:
+      is_generated: true
+    single:
+      is_generated: true
 
 # SASS
 sass:

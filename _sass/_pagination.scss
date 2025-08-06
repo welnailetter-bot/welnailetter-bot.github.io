@@ -88,3 +88,64 @@
     }
   }
 }
+
+// Content Pagination Styles
+.content-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: rem(30px) 0;
+  padding: rem(20px) 0;
+  border-top: 1px solid #e8e8e8;
+  border-bottom: 1px solid #e8e8e8;
+
+  a, span {
+    @include mainFont(bold);
+    font-size: rem(14px);
+    margin: 0 rem(5px);
+    padding: rem(8px) rem(12px);
+    border-radius: rem(4px);
+    transition: all 0.3s ease;
+    text-decoration: none;
+
+    @include media(">=sm") {
+      font-size: rem(16px);
+      padding: rem(10px) rem(15px);
+    }
+  }
+
+  a {
+    background-color: #f8f8f8;
+    color: $texts;
+    border: 1px solid #ddd;
+
+    &:hover {
+      background-color: $themeColor;
+      color: #fff;
+      border-color: $themeColor;
+    }
+
+    &.pagination-prev,
+    &.pagination-next {
+      background-color: $themeColor;
+      color: #fff;
+      border-color: $themeColor;
+
+      &:hover {
+        background-color: darken($themeColor, 10%);
+        border-color: darken($themeColor, 10%);
+      }
+    }
+  }
+
+  span.pagination-current {
+    background-color: $themeColor;
+    color: #fff;
+    border: 1px solid $themeColor;
+  }
+
+  .pagination-num {
+    min-width: rem(40px);
+    text-align: center;
+  }
+}

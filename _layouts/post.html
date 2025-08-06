@@ -31,6 +31,10 @@
 
                 {{ content }}
 
+                {% if page.paginated %}
+                    {{ page | paginate_links }}
+                {% endif %}
+
                 {% include pagination-post.html %}
             </article>
 
