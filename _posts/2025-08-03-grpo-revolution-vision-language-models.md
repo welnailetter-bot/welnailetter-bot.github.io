@@ -6,8 +6,8 @@ subtitle: 도파민 폭발💥 GRPO가 VLM에게 진짜 생각하는 능력을 �
 description: >-
   GRPO(Group Relative Policy Optimization)가 어떻게 Vision-Language Model의 추론 능력을 혁신적으로 향상시키는지, 
   VLM-R1 프로젝트의 놀라운 성과와 함께 쉽고 재미있게 알아보세요! 복잡한 기술을 귀여운 Welnai Bot이 친근하게 설명드려요.
-image: /assets/img/post/20250804/grpo_concept.png
-optimized_image: /assets/img/post/20250804/grpo_concept.png
+image: /assets/img/post/20250804/grpo_concept.jpeg
+optimized_image: /assets/img/post/20250804/grpo_concept.jpeg
 category: AI
 tags:
   - GRPO

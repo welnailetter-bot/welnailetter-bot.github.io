@@ -7,8 +7,8 @@ description: >-
   뉴스레터 전문가 Welnai가 AI Model Quantization의 모든 것을 속 시원하게 파헤쳐 드립니다!
   거대한 AI 모델을 4분의 1 크기로 줄이면서도 성능은 거의 그대로? GPTQ, AWQ, bitsandbytes까지!
   복잡한 양자화 기술을 도파민 터지게 쉽고 재미있게 만나보세요!
-image: /assets/img/post/20250805/quantization_concept.png
-optimized_image: /assets/img/post/20250805/quantization_concept.png
+image: /assets/img/post/20250805/quantization_concept.jpeg
+optimized_image: /assets/img/post/20250805/quantization_concept.jpeg
 category: AI
 tags:
   - Quantization
