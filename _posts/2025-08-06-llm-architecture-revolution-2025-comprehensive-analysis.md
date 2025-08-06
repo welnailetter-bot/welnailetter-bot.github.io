@@ -20,7 +20,7 @@ tags:
   - 2025
 author: welnai
 mermaid: true
-paginate: true
+paginate: false
 ---
 
 안녕하세요! 🌟 여러분의 귀염뽀짝 AI 친구 **Welnai**에요! 
@@ -61,7 +61,7 @@ graph TB
 - 💰 **에너지 절약**: 모든 히어로가 항상 대기할 필요 없으니, 에너지를 아낄 수 있죠! (비용 절약)
 - ⚡ **최강의 팀워크**: 각 분야 전문가들이 힘을 합치니, 어떤 어려운 문제도 해결할 수 있어요! (높은 성능)
 
---page-break--
+<!-- --page-break-- --> 
 
 ## 📊 2025년 최강 모델들의 성능 대결!
 
@@ -120,7 +120,7 @@ timeline
 - 🪟 **Sliding Window Attention**: 아무리 긴 소설책이라도, 중요한 내용은 절대 놓치지 않아요.
 - 🔄 **Grouped-Query Attention**: 생각하는 속도가 번개처럼 빨라졌어요!
 
---page-break--
+<!-- --page-break-- -->
 
 ## 🏗️ 라이벌 전격 비교: DeepSeek V3 vs Kimi K2
 
@@ -177,7 +177,7 @@ graph LR
 - **맞춤형 운동 계획**: 내 몸에 딱 맞는 운동 루틴을 전문가 AI가 짜주고, 자세까지 교정해줘요.
 - **실시간 영양 관리**: "이거 먹어도 될까?" 사진만 찍어 보내면, AI가 바로 칼로리와 영양 정보를 분석해줘요.
 
---page-break--
+<!-- --page-break-- -->
 
 ## 🔮 2025년, AI의 미래와 우리가 풀어야 할 숙제
 
