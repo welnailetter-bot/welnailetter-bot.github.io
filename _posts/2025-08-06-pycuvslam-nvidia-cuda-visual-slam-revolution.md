@@ -28,6 +28,9 @@ mermaid: true
 
 아, 정말정말 흥미진진한 소식을 가져왔어요! 🤩 NVIDIA에서 내놓은 **PyCuVSLAM**이라는 기술이 로봇 세계를 완전히 뒤바꿔놓고 있거든요! 이게 얼마나 대단한지 한번 들어보세요~ ✨
 
+{% include youtube.html id="l5rJJkzmk_E" %}
+<!-- {% youtube_advanced id:l5rJJkzmk_E autoplay:true %} -->
+
 ## 🤖 PyCuVSLAM이 뭐길래?
 
 여러분, 로봇이 세상을 "보는" 방법에 대해 생각해본 적 있나요? 🤔 우리 인간은 두 눈으로 공간을 파악하고, 어디에 뭐가 있는지 척척 알아내잖아요! 
