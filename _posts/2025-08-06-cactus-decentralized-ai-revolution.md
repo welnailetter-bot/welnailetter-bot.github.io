@@ -38,7 +38,7 @@ Cactus의 구조는 아주 특별해요. 바로 **"살(Flesh)과 가시(Thorns)"
 <div class="mermaid">
 graph TD
     subgraph "🌵 Cactus 아키텍처"
-        Flesh("살 (Flesh)<br/>중앙 코어") --> Thorns
+        Flesh("육체 (Flesh)<br/>중앙 코어") --> Thorns
         
         subgraph "가시 (Thorns)<br/>애플리케이션 모듈"
             Thorns --> T1["AI 모델 실행 🧠"]
