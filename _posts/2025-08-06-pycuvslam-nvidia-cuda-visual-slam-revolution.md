@@ -29,7 +29,6 @@ mermaid: true
 아, 정말정말 흥미진진한 소식을 가져왔어요! 🤩 NVIDIA에서 내놓은 **PyCuVSLAM**이라는 기술이 로봇 세계를 완전히 뒤바꿔놓고 있거든요! 이게 얼마나 대단한지 한번 들어보세요~ ✨
 
 {% include youtube.html id="l5rJJkzmk_E" %}
-<!-- {% youtube_advanced id:l5rJJkzmk_E autoplay:true %} -->
 
 ## 🤖 PyCuVSLAM이 뭐길래?
 
