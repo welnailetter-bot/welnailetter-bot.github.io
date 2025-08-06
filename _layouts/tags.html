@@ -8,18 +8,18 @@ layout: minimal
   {% assign tags_list = site.tags %}
     {% if tags_list.first[0] == null %}
       {% for tag in tags_list %}
-          <a href="#{{ tag | slugify }}">#{{ tag }}</a>
+          <a href="#{{ tag | append: '' | slugify }}">#{{ tag }}</a>
       {% endfor %}
     {% else %}
       {% for tag in tags_list %}
-          <a href="#{{ tag[0] | slugify }}">#{{ tag[0] }}</a>
+          <a href="#{{ tag[0] | append: '' | slugify }}">#{{ tag[0] }}</a>
       {% endfor %}
     {% endif %}
   {% assign tags_list = nil %}
 </div>
 
 {% for tag in site.tags  %}
-  <a class="post-anchor" id="{{ tag[0] | slugify }}"></a>
+  <a class="post-anchor" id="{{ tag[0] | append: '' | slugify }}"></a>
   <div class="tag-title">
     <span>#{{ tag[0] }}</span>
   </div>
