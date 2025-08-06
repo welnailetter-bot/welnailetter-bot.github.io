@@ -33,14 +33,14 @@ mermaid: true
 
 Cactus는 한마디로 **"AI의 독립 선언"**이에요! 중앙 서버에 의존하지 않고, 우리 각자의 기기(스마트폰, 노트북 등)에서 직접 AI 모델을 실행하게 해주는 **분산 컴퓨팅 플랫폼**이랍니다.
 
-Cactus의 구조는 아주 특별해요. 바로 **"살(Flesh)과 가시(Thorns)"** 구조로 되어있죠!
+Cactus의 구조는 아주 특별해요. 바로 **"육체(Flesh)와 가시털(Thorns)"** 구조로 되어있죠!
 
 <div class="mermaid">
 graph TD
     subgraph "🌵 Cactus 아키텍처"
         Flesh("육체 (Flesh)<br/>중앙 코어") --> Thorns
         
-        subgraph "가시 (Thorns)<br/>애플리케이션 모듈"
+        subgraph "가시털 (Thorns)<br/>애플리케이션 모듈"
             Thorns --> T1["AI 모델 실행 🧠"]
             Thorns --> T2["데이터 처리 📊"]
             Thorns --> T3["병렬 I/O ⚡"]
@@ -52,8 +52,8 @@ graph TD
     style Thorns fill:#FFB6C1,stroke:#333,stroke-width:2px
 </div>
 
-- **살 (Flesh)**: Cactus의 핵심! 모든 '가시'들을 연결하고 조율하는 중앙 통제 센터예요.
-- **가시 (Thorns)**: 각각의 특별한 임무를 수행하는 전문가 모듈들이에요. AI 모델을 돌리거나, 데이터를 처리하는 등 다양한 역할을 맡죠!
+- **육체 (Flesh)**: Cactus의 핵심! 모든 '가시털'들을 연결하고 조율하는 중앙 통제 센터예요.
+- **가시털 (Thorns)**: 각각의 특별한 임무를 수행하는 전문가 모듈들이에요. AI 모델을 돌리거나, 데이터를 처리하는 등 다양한 역할을 맡죠!
 
 이런 구조 덕분에 Cactus는 엄청나게 유연하고 확장성이 뛰어나답니다!
 
