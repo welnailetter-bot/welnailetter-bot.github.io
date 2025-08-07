@@ -212,6 +212,9 @@ graph TB
 
 "코드는... 어려운데...?" 걱정 마세요! HuggingFace 라이브러리를 사용하면 생각보다 간단하게 파인튜닝을 할 수 있어요.
 
+<details markdown="1">
+<summary>👆 HuggingFace 기본 파인튜닝 코드 보기 (클릭해서 펼치기! 🤖)</summary>
+
 ```python
 from transformers import (
     WhisperFeatureExtractor,
@@ -236,9 +239,14 @@ trainer = Seq2SeqTrainer(
 trainer.train() # "공부 시작!"
 ```
 
+</details>
+
 #### 🎯 LoRA 파인튜닝 실전 코드! (더 스마트하게 튜닝하기)
 
 "전체 모델을 다시 훈련하기엔 너무 무겁고... 💸 비용도 부담스럽고..." 그런 분들을 위한 **LoRA 파인튜닝** 코드예요! 
+
+<details markdown="1">
+<summary>🎯 LoRA 파인튜닝 완전 코드 보기 (0.21% 파라미터만 훈련하는 마법! ✨)</summary>
 
 ```python
 from peft import LoraConfig, get_peft_model, TaskType
@@ -312,7 +320,12 @@ peft_model.save_pretrained("./best-whisper-lora")
 print("LoRA 파인튜닝 완료! 🎉 이제 여러분만의 전문 Whisper가 탄생했어요!")
 ```
 
+</details>
+
 #### 💡 LoRA 파인튜닝의 마법! 
+
+<details markdown="1">
+<summary>💫 학습된 LoRA 모델 불러오기 코드 (나중에 써먹을 때! 🚀)</summary>
 
 ```python
 # 저장된 LoRA 모델 불러오기 (나중에 사용할 때)
@@ -323,6 +336,8 @@ lora_model = PeftModel.from_pretrained(base_model, "./best-whisper-lora")
 
 # 이제 여러분만의 전문 Whisper 사용 준비 완료! ✨
 ```
+
+</details>
 
 
 
@@ -380,6 +395,9 @@ graph TD
 
 "복잡한 건 싫고, 그냥 빨라지면 좋겠어!" 하는 분들을 위한 **faster-whisper** 사용법이에요!
 
+<details markdown="1">
+<summary>⚡ faster-whisper 사용법 보기 (4-20배 빨라지는 마법! 🚄)</summary>
+
 ```python
 from faster_whisper import WhisperModel
 import time
@@ -405,9 +423,14 @@ end_time = time.time()
 print(f"처리 시간: {end_time - start_time:.2f}초 - 빨라진 거 느껴지시나요? 🚄")
 ```
 
+</details>
+
 #### ⚡ HuggingFace Optimum으로 INT8 압축하기
 
 "허깅페이스 생태계를 벗어나기 싫어!" 하는 분들을 위한 방법이에요!
+
+<details markdown="1">
+<summary>🤗 HuggingFace Optimum으로 INT8 압축하기 (BetterTransformer + 양자화! 🚀)</summary>
 
 ```python
 from optimum.bettertransformer import BetterTransformer
@@ -439,9 +462,14 @@ model = torch.quantization.quantize_dynamic(
 print("양자화 완료! 모델이 다이어트에 성공했어요! 🎉")
 ```
 
+</details>
+
 #### 🔥 whisper.cpp로 극한 최적화! (고급자용)
 
 "내 라즈베리파이에서도 돌리고 싶어!" 하는 용감한 분들을 위한 방법이에요!
+
+<details markdown="1">
+<summary>🔥 whisper.cpp 설치 & 사용법 보기 (라즈베리파이에서도 OK! 🥧)</summary>
 
 ```bash
 # 1. 설치 (Linux/Mac)
@@ -459,6 +487,11 @@ bash ./models/download-ggml-model.sh base.en-q5_0  # Q5 양자화 버전
 
 # 4. Python에서 사용하기
 ```
+
+</details>
+
+<details markdown="1">
+<summary>🐍 Python에서 whisper.cpp 호출하기 (subprocess 활용! 🔧)</summary>
 
 ```python
 import subprocess
@@ -497,9 +530,14 @@ result = transcribe_with_whisper_cpp("my_audio.wav")
 print(f"결과: {result}")
 ```
 
+</details>
+
 #### 💎 성능 비교 벤치마크 코드
 
 "진짜로 빨라졌는지 확인해보고 싶어!" 하는 분들을 위한 벤치마크 코드예요!
+
+<details markdown="1">
+<summary>💎 성능 비교 벤치마크 코드 보기 (얼마나 빨라졌는지 직접 확인! 📊)</summary>
 
 ```python
 import time
@@ -569,6 +607,8 @@ def benchmark_whisper_models(audio_file="test_audio.mp3"):
 # 벤치마크 실행
 benchmark_whisper_models()
 ```
+
+</details>
 
 #### 방법별 성능 비교 (골라봐!)
 
@@ -641,6 +681,9 @@ mindmap
 
 #### 파이썬으로 Whisper 맛보기
 
+<details  markdown="1">
+<summary>🍯 OpenAI API로 간단하게 써보기 (코딩 초보도 OK! 👶)</summary>
+
 ```python
 from openai import OpenAI
 
@@ -664,6 +707,8 @@ with open("korean_audio.mp3", "rb") as audio_file:
     print(translation.text)
 ```
 
+</details>
+
 #### 지원하는 오디오 형식
 
 -   **파일 형식**: mp3, mp4, mpeg, mpga, m4a, wav, webm (웬만한 건 다 돼요!)
@@ -675,7 +720,9 @@ with open("korean_audio.mp3", "rb") as audio_file:
 
 #### 📺 실시간 마이크 입력 처리 (라이브 자막!)
 
-"실시간으로 내 목소리를 자막으로 만들고 싶어!" 하는 분들을 위한 코드예요!
+<details markdown="1">
+
+<summary>"실시간으로 내 목소리를 자막으로 만들고 싶어!" 하는 분들을 위한 코드예요!</summary>
 
 ```python
 import pyaudio
@@ -804,10 +851,12 @@ if __name__ == "__main__":
     transcriber = RealTimeWhisper(model_size="small", language="ko")
     transcriber.start_real_time_transcription()
 ```
+</details>
 
 #### 🎵 대용량 오디오 파일 배치 처리 (유튜브 영상들 한번에!)
 
-"유튜브 영상 100개를 한번에 자막으로 만들고 싶어!" 하는 야심찬 분들을 위한 코드예요!
+<details  markdown="1">
+<summary>"유튜브 영상 100개를 한번에 자막으로 만들고 싶어!" 하는 야심찬 분들을 위한 코드예요!</summary>
 
 ```python
 import os
@@ -1032,9 +1081,12 @@ if __name__ == "__main__":
     )
 ```
 
+</details>
+
 #### 🌐 웹 애플리케이션 통합 (Flask + Whisper)
 
-"내 웹사이트에 음성 인식 기능을 추가하고 싶어!" 하는 개발자분들을 위한 코드예요!
+<details markdown="1">
+<summary>"내 웹사이트에 음성 인식 기능을 추가하고 싶어!" 하는 개발자분들을 위한 코드예요!</summary>
 
 ```python
 from flask import Flask, request, jsonify, render_template, send_file
@@ -1238,10 +1290,12 @@ if __name__ == '__main__':
     print("📝 http://localhost:5000 에서 접속하세요!")
     app.run(host='0.0.0.0', port=5000, debug=True)
 ```
+</details>
 
 #### 📱 WebRTC 실시간 음성 인식 (브라우저에서!)
 
-"웹 브라우저에서 바로 실시간으로 음성 인식하고 싶어!" 하는 분들을 위한 HTML + JavaScript 코드예요!
+<details markdown="1">
+<summary>"웹 브라우저에서 바로 실시간으로 음성 인식하고 싶어!" 하는 분들을 위한 HTML + JavaScript 코드예요!</summary>
 
 ```html
 <!DOCTYPE html>
@@ -1432,7 +1486,7 @@ if __name__ == '__main__':
 </body>
 </html>
 ```
-
+</details>
 
 
 ### 👍👎 장점과 단점, 솔직하게 알아보기
@@ -1503,7 +1557,8 @@ Whisper는 여기서 멈추지 않아요! 최근에 나온 **v3** 버전은 처�
 
 #### ⚡ GPU 메모리 최적화 (돈 아끼는 비법!)
 
-"GPU 메모리가 부족해서 큰 모델을 못 써 😭" 하는 분들을 위한 마법의 코드예요!
+<details markdown="1">
+<summary>"GPU 메모리가 부족해서 큰 모델을 못 써 😭" 하는 분들을 위한 마법의 코드예요!</summary>
 
 ```python
 import torch
@@ -1580,10 +1635,12 @@ optimizer = MemoryOptimizedWhisper("large-v3")
 audio_files = ["file1.mp3", "file2.mp3", "file3.mp3"]
 results = optimizer.transcribe_batch(audio_files, max_concurrent=2)
 ```
+</details>
 
 #### 🐳 Docker로 간편 배포! (클릭 한 번으로 배포)
 
-"복잡한 설정 없이 어디서든 바로 실행하고 싶어!" 하는 분들을 위한 Docker 설정이에요!
+<details markdown="1">
+<summary>"복잡한 설정 없이 어디서든 바로 실행하고 싶어!" 하는 분들을 위한 Docker 설정이에요!</summary>
 
 ```dockerfile
 # Dockerfile
@@ -1619,6 +1676,7 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
 # 애플리케이션 실행
 CMD ["python3", "app.py"]
 ```
+
 
 ```yaml
 # docker-compose.yml
@@ -1657,6 +1715,8 @@ services:
     restart: unless-stopped
 ```
 
+
+
 ```bash
 # 한 번에 실행!
 echo "🐳 Docker로 Whisper 서비스 시작!"
@@ -1665,10 +1725,12 @@ docker-compose up -d
 echo "🌐 http://localhost 에서 확인하세요!"
 echo "📊 상태 확인: docker-compose logs -f"
 ```
+</details>
 
 #### ⚖️ 로드 밸런싱 & 스케일링 (트래픽 폭증에도 끄떡없어!)
 
-"사용자가 많아져서 서버가 터져요!" 하는 행복한 고민이 있는 분들을 위한 코드예요!
+<details markdown="1">
+<summary>"사용자가 많아져서 서버가 터져요!" 하는 행복한 고민이 있는 분들을 위한 코드예요!</summary>
 
 ```python
 # load_balancer.py
@@ -1773,10 +1835,12 @@ async def main():
 # 실행
 # asyncio.run(main())
 ```
+</details>
 
 #### 📊 모니터링 & 로깅 (문제 발생 전에 미리 알자!)
 
-"서비스가 잘 돌고 있는지 확인하고 싶어!" 하는 책임감 있는 분들을 위한 코드예요!
+<details markdown="1">
+<summary>"서비스가 잘 돌고 있는지 확인하고 싶어!" 하는 책임감 있는 분들을 위한 코드예요!</summary>
 
 ```python
 # monitoring.py
@@ -1937,8 +2001,10 @@ if __name__ == '__main__':
     monitor.logger.info("🚀 Whisper 서비스 모니터링 시작!")
     app.run(host='0.0.0.0', port=5000)
 ```
+</details>
 
-#### 🔧 성능 튜닝 체크리스트 (마지막 최적화!)
+<details markdown="1">
+<summary> #### 🔧 성능 튜닝 체크리스트 (마지막 최적화!)</summary>
 
 ```python
 # performance_tips.py
@@ -2032,6 +2098,7 @@ if __name__ == "__main__":
     
     print(f"\n🎉 최적화 설정 완료! 이제 여러분의 Whisper가 번개처럼 빨라질 거예요! ⚡")
 ```
+</details>
 
 #### Whisper의 미래는?
 
