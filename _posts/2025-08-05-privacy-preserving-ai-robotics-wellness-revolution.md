@@ -351,6 +351,5 @@ class FutureWellnessEcosystem:
 
 - [Federated Learning for Privacy-Preserving AI](https://link.springer.com/article/10.1007/s10462-024-10774-7)
 - [Edge Computing and IoT Privacy](https://www.nature.com/articles/s41598-025-88163-5)
-- [NAMUHX Wellness Robot Innovation](https://oo.ai/s/XFW0W1sTRveb2TdkdPpQ)
 - [Privacy-First AI: Exploring Federated Learning](https://www.edge-ai-vision.com/2025/01/privacy-first-ai-exploring-federated-learning/)
 - [KAIST Federated Learning Research & Performance Analysis](https://oo.ai/s/qy1yTEdAoSSVjY3j01TA)
