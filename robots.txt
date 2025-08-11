@@ -1,3 +1,5 @@
 # robotstxt.org/
 
 User-agent: *
+Allow: /
+Sitemap: https://welnailetter-bot.github.io/sitemap.xml
