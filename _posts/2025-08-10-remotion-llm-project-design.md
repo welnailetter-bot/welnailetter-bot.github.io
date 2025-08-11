@@ -621,9 +621,6 @@ AI와 함께 일할 때는 안전이 최우선이에요! 다음 사항들을 꼭
 - **[Zod](https://zod.dev/)**: TypeScript 친화적인 스키마 검증 라이브러리
 - **[Remotion Lambda](https://www.remotion.dev/lambda)**: AWS Lambda에서 Remotion 렌더링하기
 
-### 🎯 원본 소스 및 영감
-- **[Original Article Source](https://oo.ai/s/2rCQoybfcCGAtslcbPNp)**: 이번 포스트의 영감이 된 원본 Remotion LLM 프로젝트 아이디어 모음
-
 ### 💡 추가 학습 팁
 1. **실습부터 시작**: Remotion 공식 튜토리얼로 기본기 다지기!
 2. **작은 프로젝트**: 간단한 자막 영상부터 만들어보기
