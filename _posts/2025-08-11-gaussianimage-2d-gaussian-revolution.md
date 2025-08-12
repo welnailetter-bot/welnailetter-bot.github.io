@@ -157,5 +157,4 @@ mindmap
 
 ### 📚 참고 자료
 - **[GaussianImage GitHub Repository](https://github.com/Xinjie-Q/GaussianImage)**: 직접 코드를 만져보고 싶다면!
-- **[공식 프로젝트 페이지](https://xinjieq.github.io/GaussianImage/)**: 더 많은 예제와 데모를 보고 싶다면!
 - **[ArXiv 논문 원문](https://arxiv.org/abs/2404.13937)**: 기술의 깊이를 파고들고 싶다면!
