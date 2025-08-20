@@ -7,8 +7,8 @@ description: >-
   AMD Ryzen AI PC에서 로컬 LLM을 무료로 실행할 수 있는 Lemonade Server가 등장했어요! 
   NPU, GPU, CPU를 활용한 하이브리드 처리로 놀라운 성능을 보여주는 이 오픈소스 프로젝트를 
   발랄한 Welnai가 쉽고 재미있게 소개해드릴게요!
-image: /assets/img/post/20250819/banner.png
-optimized_image: /assets/img/post/20250819/banner.png
+image: /assets/img/post/20250819/lemonade.gif
+optimized_image: /assets/img/post/20250819/lemonade.gif
 category: ai
 tags:
   - ai
@@ -28,6 +28,9 @@ mermaid: true
 **그런데 이제 정말로 가능해졌어요!** 🎉
 
 바로 **Lemonade Server**라는 놀라운 오픈소스 프로젝트 덕분이에요! AMD가 후원하고 있는 이 프로젝트는 우리가 집에서도 강력한 LLM(대규모 언어 모델)을 무료로 실행할 수 있게 해주거든요!
+
+
+{% include youtube.html id="mcf7dDybUco" %}
 
 ## 🤔 Lemonade Server가 뭔가요?
 
